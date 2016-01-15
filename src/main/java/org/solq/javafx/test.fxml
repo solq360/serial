@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
+<?import application.MainController?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
+xmlns="http://javafx.com/javafx/8" 
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="application.MainController"
+>
+   <children>
+      <Button id="userSubmit" layoutX="331.0" layoutY="273.0" mnemonicParsing="false" text="提交"
+     	onAction="#handleSubmitButtonAction" 
+       />
+      <CheckBox layoutX="277.0" layoutY="233.0" mnemonicParsing="false" text="男" />
+      <CheckBox layoutX="331.0" layoutY="233.0" mnemonicParsing="false" text="女" />
+      <Label layoutX="204.0" layoutY="160.0" prefHeight="15.0" prefWidth="52.0" text="姓名 ：" />
+      <Slider layoutX="281.0" layoutY="116.0" />
+      <Slider layoutX="470.0" layoutY="116.0" orientation="VERTICAL" />
+      <TextField id="user_name" layoutX="258.0" layoutY="156.0" />
+      <TextField id="user_passwd" layoutX="258.0" layoutY="200.0" />
+      <Label layoutX="204.0" layoutY="204.0" text="密码:" />
+   </children>
+</Pane>
