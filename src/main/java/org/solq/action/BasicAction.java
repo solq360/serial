@@ -50,7 +50,7 @@ public class BasicAction implements IAction {
 
     void printTime() {
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
-	System.out.println("动作 ： " + name + " 执行时间 : " + (sdf.format(new Date())) + " : " + this.runCount);
+	System.out.println("动作 ： " + name + " 执行时间 : " + (sdf.format(new Date())) + " : " + this.runCount + " 当前值 : " + (start + this.runCount));
     }
 
     public boolean checkRun() {
@@ -67,28 +67,35 @@ public class BasicAction implements IAction {
     }
 
     public static void main(String[] args) {
+	byte val = 0b01100011;
+	System.out.println(val);
 
-	List<BasicAction> task = new ArrayList<>();
-	for (int i = 0; i < 3; i++) {
-	    BasicAction action = new BasicAction();
-	    action.name = " " + i;
-	    action.start = 50 + i * 20;// 50度开始
-	    action.end = 180;// 180度结束
-	    action.time = 5000L;// 执行3秒
-	    action.timeDelay = 500L + i * 800;// 延时执行时间
-	    action.speed=1.d+i;//加速
-	    action.buildTime();
-	    action.printTime();
-	    task.add(action);
-	}
+	int v = (val / 10 * 16) + (val % 10);
 
-	while (true) {
-	    for (BasicAction action : task) {
-		if (action.checkRun()) {
-		    action.run();
-		}
-	    }
-	}
+	System.out.println(v);
+	v = ((v / 16 * 10) + (v % 16));
+	System.out.println(v);
+	// List<BasicAction> task = new ArrayList<>();
+	// for (int i = 0; i < 3; i++) {
+	// BasicAction action = new BasicAction();
+	// action.name = " " + i;
+	// action.start = 50 + i * 20;// 50度开始
+	// action.end = 180;// 180度结束
+	// action.time = 5000L;// 执行3秒
+	// action.timeDelay = 500L + i * 800;// 延时执行时间
+	// action.speed = 1.d + i;// 加速
+	// action.buildTime();
+	// action.printTime();
+	// task.add(action);
+	// }
+	//
+	// while (true) {
+	// for (BasicAction action : task) {
+	// if (action.checkRun()) {
+	// action.run();
+	// }
+	// }
+	// }
     }
 
 }
